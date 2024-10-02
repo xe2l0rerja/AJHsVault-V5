@@ -1,0 +1,40 @@
+<div id="welcome-wrapper">
+<div class="content">
+    <h1 class="welcome-text">Welcome to AJH's Vault</h1>
+    <div id="welcome-info">
+        <div class="welcome-status-container">
+            <span id="device-time"></span> |
+            <span id="battery-status"></span>
+        </div>
+        <div class="home-btn-container">
+            <a class="home-btn" href="/g.html">Games</a>
+            <a class="home-btn" href="/a.html">Applications</a>
+            <a class="home-btn" href="/p.html">Proxy</a>
+        </div>
+        </div>
+        <div class="news">
+            <h3>Announcement</h3>
+            <p>
+                Hey all. welcome back to the site. Hope you enjoy this fresh, new, minimal look. If you experience any problems, please let me know at <a href="mailto:aidan@ajh.boats">aidan@ajh.boats</a>.<br>
+                <span class="signature">Aidan H.</span>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+```
+const backToTopButton = document.getElementById('back-to-top');
+window.onscroll = function () {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backToTopButton.style.display = "block";
+  } else {
+  backToTopButton.style.display = "none";
+}
+};
+
+backToTopButton.onclick = function () {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+};
+```

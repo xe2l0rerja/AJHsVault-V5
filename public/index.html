@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore exciting activities on AJH's Vault. Play and enjoy a variety of interactive and entertaining activities..">
+	<meta name="keywords" content="AJH's Vault, gxmes, entertainment, online">
+	<meta name="author" content="AJH's Vault">
+  
+	<!-- Social Media Meta Tags -->
+	<meta property="og:title" content="AJH's Vault - Play and Enjoy Exciting Activities">
+	<meta property="og:description" content="Explore exciting activities on AJH's Vault. Play and enjoy a variety of interactive and entertaining activities.">
+	<meta property="og:image" content="/src/logo.png"> <!-- Add URL to a representative game image -->
+	<meta property="og:url" content="https://ajhmath.org/">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="AJH's Vault - Play and Enjoy Exciting Activities">
+	<meta name="twitter:description" content="Explore exciting activities on AJH's Vault. Play and enjoy a variety of interactive and entertaining activities.">
+	<meta name="twitter:image" content="/src/logo.png">
+  
+	<!-- Search Engine Indexing -->
+	<meta name="robots" content="index, follow">
+
+	  <!-- Discord Embedding -->
+	  <meta property="og:site_name" content="AJH's Vault">
+	  <meta property="og:type" content="website">
+	  <meta property="og:locale" content="en_US">
+
+	    <!-- Embed Color for Discord -->
+  <meta name="theme-color" content="#0f1b31"> 
+  
+	<!-- Favicon -->
+	<link rel="icon" href="/src/icon.png" type="image/x-icon">
+	
+	<title>AJH's Vault - Play and Enjoy Exciting Activities</title>
+  <link href="/public/style.css" rel="stylesheet" type="text/css" />
+  <script src="/public/script.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6084312783725533"
+	crossorigin="anonymous"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-03F8ZHB8D8%22%3E"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'G-03F8ZHB8D8');
+		</script>
+		
+</head>
+<!-- content-->
+<body>
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="navcontainer">
+        <nav>
+            <ul type="none">
+                <li><a href="/">Home</a></li>
+                <li><a href="/g.html">Games</a></li>
+                <li><a href="/a.html">Apps</a></li>
+                <li><a href="/p.html">Proxy</a></li>
+                <li><span id="device-time"></span> | <span id="battery-status"></span></li>
+            </ul>
+        </nav>
+      </div>
+    <div id="welcome-wrapper">
+        <div class="content">
+            <h1 class="welcome-text">Welcome to AJH's Vault</h1>
+            <div id="welcome-info">
+                <div class="welcome-status-container">
+                    <span id="device-time"></span> |
+                    <span id="battery-status"></span>
+                </div>
+                <div class="home-btn-container">
+                    <a class="home-btn" href="/g.html">Games</a>
+                    <a class="home-btn" href="/a.html">Applications</a>
+                    <a class="home-btn" href="/p.html">Proxy</a>
+                </div>
+                </div>
+                <div class="news">
+                    <p>
+                        Hey all. welcome back to the site. Hope you enjoy this fresh, new, minimal look. If you experience any problems, please let me know at <a href="mailto:aidan@ajh.boats">aidan@ajh.boats</a>.<br>
+                        <span class="signature">Aidan H.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        const wrapper = document.getElementById('welcome-wrapper');
+
+document.addEventListener('mousemove', (event) => {
+    const { clientX, clientY } = event;
+    const { innerWidth, innerHeight } = window;
+    const x = (clientX / innerWidth) * 2 - 1;
+    const y = (clientY / innerHeight) * 2 - 1;
+    wrapper.style.transform = `perspective(1000px) rotateY(${x * 15}deg) rotateX(${y * -15}deg)`;
+});
+wrapper.addEventListener('mouseleave', () => {
+    wrapper.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+});
+</script>
+</body>
+</html>

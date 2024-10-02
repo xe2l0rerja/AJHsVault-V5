@@ -1,0 +1,235 @@
+@import url('https://fonts.cdnfonts.com/css/saint-carell-clean-personal');
+@import url('https://fonts.cdnfonts.com/css/palatino');
+@import url('https://fonts.cdnfonts.com/css/southam-demo');
+
+:root {
+    --bg: #000000;
+    --accent1: #161616;
+    --pane-padding: 5px 42px;
+    --accent2: rgba(82, 82, 82, 0.2);
+    --nav: rgba(12, 12, 12, 0.5);
+    --accent3: rgba(255, 255, 255, 0.70);
+    --accent4: rgba(0, 0, 0, 0.30);
+    --accent5: rgba(22, 25, 32, 0.5);
+  }
+
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Palatino', sans-serif;
+    background-image: url('/public/src/img/welcome.jpg'); 
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+    margin: 0;                   
+    height: 100vh;               
+    overflow: hidden;
+}
+
+#welcome-wrapper {
+    display: flex;            
+    justify-content: center; 
+    align-items: center;     
+    min-height: 70vh;     
+    text-align: center; 
+    font-size: 1.1em;
+    transition: transform 0.1s; 
+}
+
+.g-text {
+    font-size:3em;
+    font-family: 'Saint Carell Clean PERSONAL', sans-serif;
+}
+
+.welcome-text {
+    font-family: 'Saint Carell Clean PERSONAL', sans-serif;
+}
+
+.home-btn {
+    color: inherit;
+    padding: 1em;
+    background: var(--accent4);
+    border: solid 2px var(--accent2);
+    border-radius: 0.25em;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-weight: bold;;
+}
+
+.welcome-status-container, .news {
+    background: var(--accent4);
+    border: solid 2px var(--accent2);
+    width: auto;
+    display: inline-block;
+    margin-bottom: 1.25em;
+    border-radius: 0.25em;
+}
+
+.welcome-status-container {
+    padding: 1em;
+}
+
+.news {
+    padding: 0 1em;
+    max-width: 16.5em;
+    display: inline-block;
+    height: 12vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+.home-btn-container {
+    margin-bottom: 1.25em;
+}
+
+.home-btn:hover {
+    background: var(--accent5);
+}
+
+a {
+    color: inherit;
+}
+
+.signature {
+    font-family: 'Southam Demo', sans-serif;
+    text-align: left !important;
+    font-size: 3em;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+    background-color: var(--accent4); 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent2); 
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--accent2); 
+    border-radius: 6px; 
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 2em;
+  position: relative; 
+}
+
+nav li a {
+  text-decoration: none;
+  position: relative; 
+}
+
+nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; 
+  background-color: rgb(255, 255, 255); 
+  transform: scaleX(0); 
+  transform-origin: left; 
+  transition: transform 0.3s ease; 
+}
+
+nav li a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
+
+
+nav {
+  background: var(--nav);
+  margin: 0;
+  padding: 0.25em;
+  text-align: center;
+  position: sticky;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.navcontainer {
+  justify-content: center;
+  display: flex;
+}
+
+.game-link {
+    text-decoration: none;
+  }
+  
+  .game-tile {
+    background-color: var(--accent2);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .game-icon {
+    border-radius: 0.5em;
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+  .game-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Exactly 8 items per row */
+    padding: 0 4em;
+    margin-bottom: 2em;
+  }
+  
+  /* Responsive Breakpoints */
+  @media (max-width: 1400px) {
+    .grid-container {
+      grid-template-columns: repeat(6, 1fr); /* 6 items per row for medium-large screens */
+    }
+  }
+  
+  @media (max-width: 1100px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 items per row for smaller screens */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row for smaller devices */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row for small mobile screens */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* 1 item per row for very small screens */
+    }
+  }
+
+  .container {
+    padding: 1em;
+  }
+
+  #g-wrapper {
+    text-align: center;
+    overflow-y: auto;
+    max-height: 100vh;
+}
