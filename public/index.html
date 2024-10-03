@@ -63,11 +63,10 @@
       </div>
     <div id="welcome-wrapper">
         <div class="content">
-            <h1 class="welcome-text">Welcome to AJH's Vault</h1>
+            <h1 class="welcome-text">AJH's Vault</h1>
             <div id="welcome-info">
                 <div class="welcome-status-container">
-                    <span id="device-time"></span> |
-                    <span id="battery-status"></span>
+                    Welcome back! Have a great <span class="todaysdate"></span>.
                 </div>
                 <div class="home-btn-container">
                     <a class="home-btn" href="/g.html">Games</a>
@@ -97,6 +96,11 @@ document.addEventListener('mousemove', (event) => {
 wrapper.addEventListener('mouseleave', () => {
     wrapper.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
 });
+const today = new Date();
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const dayName = dayNames[today.getDay()];
+
+document.querySelector('.todaysdate').textContent = dayName;
 </script>
 </body>
 </html>
