@@ -1,0 +1,6 @@
+:80, ajh.otil.cl, ajh.justlearning.net, study.ajh.boats, class.ajh.quest, hello.allisons.org, edu.blawg.ch, ajh.timekeeper.ro {
+	reverse_proxy localhost:8080
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile

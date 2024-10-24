@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore exciting activities on AJH's Vault. Play and enjoy a variety of interactive and entertaining activities.">
+	<meta name="keywords" content="AJH's Vault, gxmes, entertainment, online">
+	<meta name="author" content="AJH's Vault">
+
+	<!-- Social Media Meta Tags -->
+	<meta property="og:title" content="AJH's Vault - Play and Enjoy Exciting Activities">
+	<meta property="og:description" content="Explore exciting activities on AJH's Vault. Play and enjoy a variety of interactive and entertaining activities.">
+	<meta property="og:image" content="/src/logo.png">
+	<meta property="og:url" content="https://ajhmath.org/">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="AJH's Vault - Play and Enjoy Exciting Activities">
+	<meta name="twitter:description" content="Explore exciting activities on AJH's Vault. Play and enjoy a variety of interactive and entertaining activities.">
+	<meta name="twitter:image" content="/src/logo.png">
+
+	<!-- Search Engine Indexing -->
+	<meta name="robots" content="index, follow">
+
+	<!-- Discord Embedding -->
+	<meta property="og:site_name" content="AJH's Vault">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_US">
+
+	<!-- Embed Color for Discord -->
+	<meta name="theme-color" content="#0f1b31">
+
+	<!-- Favicon -->
+	<link rel="icon" href="/src/icon.png" type="image/x-icon">
+	
+	<title>AJH's Vault - Play and Enjoy Exciting Activities</title>
+	<link href="/public/style.css" rel="stylesheet" type="text/css" />
+	<script src="/public/script.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6084312783725533" crossorigin="anonymous"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-03F8ZHB8D8"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-03F8ZHB8D8');
+	</script>
+	<script src="/public/src/data/main.js"></script>
+</head>
+
+<!-- content-->
+<body>
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="navcontainer">
+        <nav>
+            <ul type="none">
+                <li><a href="/">Home</a></li>
+                <li><a href="/g.html">Games</a></li>
+                <li><a href="/a.html">Apps</a></li>
+                <li><a href="/p.html">Proxy</a></li>
+                <li><span id="device-time"></span> | <span id="battery-status"></span></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="g-wrapper">
+        <div class="content">
+            <h1 class="g-text">AJH's Vault: Games</h1>
+            <center>
+                <form class="searchbar1 widthlocksearch">
+                    <svg style="margin-right: 0.5em; translate: 0 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input id="uv-address" type="text" placeholder="Search games" oninput="searchGames()" />
+                </form>
+            </center>
+                        <div id="iframe-wrapper">
+                            <iframe id="game-iframe" src="" style="width: 90vw; height: 100vh; border: none; display: none;"></iframe>
+                            <button id="fullscreen-btn" class="small-button" style="display: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16">
+                                    <path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5"/>
+                                  </svg> <span>Fullscreen</span>
+                            </button>
+                        </div>
+            <div>
+                <div id="game-container" class="grid-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+let games = [];
+
+// Fetch the games from the external games.json file
+fetch("games.json")
+    .then((response) => response.json())
+    .then((data) => {
+        games = data;
+        displayGames(games);
+    })
+    .catch((error) => console.error("Error:", error));
+
+function displayGames(filteredGames) {
+    const container = document.getElementById("game-container");
+    const iframe = document.getElementById("game-iframe");
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+    const iframeWrapper = document.getElementById('iframe-wrapper'); // Reference to the iframe wrapper
+    container.innerHTML = ""; // Clear the container
+
+    filteredGames.forEach((project) => {
+        const game = document.createElement("a");
+        game.href = project.link; // Set the link for the game
+        game.className = "game-link container";
+        game.innerHTML = `
+        <div class="game-tile">
+            <img class="game-icon" src="${project.imgSrc}" alt="${project.title} Game Image" loading="lazy" />
+            <p class="game-title">${project.title}</p>
+        </div>`;
+
+        const img = game.querySelector("img");
+        img.onerror = function() {
+            this.src = 'none.jpg'; // Fallback image if the game icon fails to load
+        };
+
+        // On game click, load game into iframe and scroll to the iframe-wrapper
+        game.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            iframe.src = project.link;
+
+            // Ensure the iframe is visible
+            iframe.style.display = 'block';
+            iframeWrapper.style.display = 'block'; // Ensure the iframe wrapper is visible
+
+            // Show the fullscreen button
+            fullscreenBtn.style.display = 'inline-block'; // Show the button when a game is loaded
+
+            // Scroll to the iframe-wrapper instantly
+            iframeWrapper.scrollIntoView({
+                behavior: 'auto', // Use 'auto' for instant scroll
+                block: 'start' // Align the top of the iframe-wrapper with the top of the viewport
+            });
+        });
+
+        container.appendChild(game);
+    });
+
+    // Fullscreen functionality for the iframe
+    fullscreenBtn.addEventListener('click', () => {
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
+        }
+    });
+}
+
+function searchGames() {
+    const input = document.getElementById("uv-address").value.toUpperCase();
+    const filteredGames = games.filter((game) => game.title.toUpperCase().includes(input));
+    displayGames(filteredGames);
+}
+    </script>
+    
+</body>
+</html>
