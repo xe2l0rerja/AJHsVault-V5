@@ -65,13 +65,24 @@
 
     <div id="g-wrapper">
         <div class="content">
-            <h1 class="g-text">AJH's Vault: Games</h1>
+            <h1 class="g-text">AJH's Vault: Proxy & Apps</h1>
             <center>
+                <form class="searchbar1">
+                    <svg style="margin-right: 0.5em; translate: 0 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>      
+                    <input
+                           id="uv-search-engine"
+                           value="https://www.qwant.com/?q=%s"
+                           type="hidden"
+                           />
+                    <input id="uv-address" type="text" placeholder="Search the skibidi (yeah doesnt actually work rn)" />
+                  </form>
                 <form class="searchbar1 widthlocksearch">
                     <svg style="margin-right: 0.5em; translate: 0 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                     </svg>
-                    <input id="uv-address" type="text" placeholder="Search games" oninput="searchGames()" />
+                    <input id="uv-address" type="text" placeholder="Filter for apps" oninput="searchGames()" />
                 </form>
             </center>
                         <div id="iframe-wrapper">
@@ -92,7 +103,7 @@
 let games = [];
 
 // Fetch the games from the external games.json file
-fetch("games.json")
+fetch("apps.json")
     .then((response) => response.json())
     .then((data) => {
         games = data;

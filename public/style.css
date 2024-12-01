@@ -23,7 +23,7 @@ body {
     background-repeat: no-repeat; 
     margin: 0;                   
     height: 100vh;               
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 #welcome-wrapper {
@@ -148,6 +148,8 @@ nav {
   position: sticky;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
+  z-index: 69420;
+  top: 0;
 }
 
 .navcontainer {
@@ -234,8 +236,7 @@ nav {
 
   #g-wrapper {
     text-align: center;
-    overflow-y: auto;
-    max-height: 100vh;
+    height: 100vh;
 }
 
 .searchbar1 {
@@ -287,4 +288,6 @@ footer {
   text-align: center; /* For inline elements */
   margin-left: auto;  /* For block elements */
   margin-right: auto; /* For block elements */
+  position: relative;
+  z-index: 1;
 }
